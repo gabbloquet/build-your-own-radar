@@ -6,6 +6,9 @@
 @import 'header';
 @import 'footer';
 @import url(https://www.thoughtworks.com/css/k8s_production/screen.css);
+@import url(../../node_modules/@decathlon/vitamin/dist/index.css);
+@import url(../../node_modules/@decathlon/vitamin/dist/icons/icons.css);
+@import url(../../node_modules/@decathlon/vitamin/dist/sport-pictos/sport-pictos.css);
 
 body {
   font: 18px 'Open Sans';
