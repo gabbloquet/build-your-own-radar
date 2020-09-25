@@ -222,10 +222,11 @@ const GoogleSheetInput = function () {
 
       plotLogo(content)
 
-      var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-        ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>'
+      var bannerText = '<h1>Decathlon Tech radar</h1>'
 
       plotBanner(content, bannerText)
+
+      radarChoices(content)
 
       plotForm(content)
 
@@ -281,13 +282,30 @@ function plotBanner (content, text) {
     .html(text)
 }
 
+function radarChoices (content) {
+  content.append('div')
+    .attr('class', 'input-sheet__choices')
+
+  const choices = content.select('.input-sheet__choices')
+
+  choices.append('button')
+    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
+    .html('Front')
+  choices.append('button')
+    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
+    .html('Back')
+  choices.append('button')
+    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
+    .html('Mobile')
+}
+
 function plotForm (content) {
   content.append('div')
     .attr('class', 'input-sheet__form')
     .append('p')
     .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">Google Sheet or CSV</a> file below…</strong>')
 
-  var form = content.select('.input-sheet__form').append('form')
+  const form = content.select('.input-sheet__form').append('form')
     .attr('method', 'get')
 
   form.append('input')
