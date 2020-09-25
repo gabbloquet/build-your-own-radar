@@ -456,7 +456,7 @@ const Radar = function (size, radar) {
     return header
   }
 
-  function plotQuadrantButtons (quadrants, header) {
+  function plotQuadrantButtons (quadrants) {
     function addButton (quadrant) {
       radarElement
         .append('div')
@@ -499,9 +499,7 @@ const Radar = function (size, radar) {
       .attr('class', 'footer-content')
       .append('p')
       .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
+      'Used by Decathlon, more informations in <a href="https://wiki.decathlon.net/pages/viewpage.action?spaceKey=ENGINEERING&title=Front-End"> Confluence</a>.')
   }
 
   function mouseoverQuadrant (order) {
