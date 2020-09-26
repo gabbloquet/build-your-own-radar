@@ -282,6 +282,11 @@ function plotBanner (content, text) {
     .html(text)
 }
 
+function constructSheetUrl (sheetName) {
+  const noParamUrl = window.location.href.substring(0, window.location.href.indexOf(window.location.search))
+  return noParamUrl + '?sheetId=' + encodeURIComponent(sheetName)
+}
+
 function radarChoices (content) {
   content.append('div')
     .attr('class', 'input-sheet__choices')
@@ -289,7 +294,7 @@ function radarChoices (content) {
   const choices = content.select('.input-sheet__choices')
 
   radarsData.default.DEVELOPMENT.map((radar) => {
-    buttonBuilder(choices, radar.name, () => console.log(radar.url))
+    buttonBuilder(choices, radar.name, constructSheetUrl(radar.url))
   })
 }
 
