@@ -5,5 +5,5 @@ export const buttonBuilder = (div, content, action) => {
     .html(content)
 
   const frontButton = document.getElementById(content.toLowerCase())
-  frontButton.addEventListener('click', action)
+  frontButton.addEventListener('click', () => action)
 }

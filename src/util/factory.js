@@ -272,9 +272,7 @@ function plotFooter (content) {
     .attr('class', 'footer-content')
     .append('p')
     .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
+      '<br/> Used By <a href="https://www.decathlon.fr"> Decathlon</a>')
 }
 
 function plotBanner (content, text) {
@@ -289,10 +287,10 @@ function radarChoices (content) {
 
   const choices = content.select('.input-sheet__choices')
 
-  buttonBuilder(choices, 'Front', () => { console.log('front') })
-  buttonBuilder(choices, 'Back', () => { console.log('back') })
-  buttonBuilder(choices, 'Mobile', () => { console.log('mobile') })
-  buttonBuilder(choices, 'Scripting', () => { console.log('script') })
+  buttonBuilder(choices, 'Front', console.log('front'))
+  buttonBuilder(choices, 'Back', console.log('back'))
+  buttonBuilder(choices, 'Mobile', console.log('mobile'))
+  buttonBuilder(choices, 'Scripting', console.log('script'))
 }
 
 function plotForm (content) {
