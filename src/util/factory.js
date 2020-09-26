@@ -20,6 +20,7 @@ const MalformedDataError = require('../exceptions/malformedDataError')
 const SheetNotFoundError = require('../exceptions/sheetNotFoundError')
 const ContentValidator = require('./contentValidator')
 const Sheet = require('./sheet')
+const { buttonBuilder } = require('../components/button')
 const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
 
@@ -288,19 +289,10 @@ function radarChoices (content) {
 
   const choices = content.select('.input-sheet__choices')
 
-  choices.append('button')
-    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
-    .attr('id', 'front')
-    .html('Front')
-  choices.append('button')
-    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
-    .html('Back')
-  choices.append('button')
-    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
-    .html('Mobile')
-
-  const frontButton = document.getElementById('front')
-  frontButton.addEventListener('click', () => { console.log('front') })
+  buttonBuilder(choices, 'Front', () => { console.log('front') })
+  buttonBuilder(choices, 'Back', () => { console.log('back') })
+  buttonBuilder(choices, 'Mobile', () => { console.log('mobile') })
+  buttonBuilder(choices, 'Scripting', () => { console.log('script') })
 }
 
 function plotForm (content) {
