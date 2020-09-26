@@ -290,6 +290,7 @@ function radarChoices (content) {
 
   choices.append('button')
     .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
+    .attr('id', 'front')
     .html('Front')
   choices.append('button')
     .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
@@ -297,6 +298,9 @@ function radarChoices (content) {
   choices.append('button')
     .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
     .html('Mobile')
+
+  const frontButton = document.getElementById('front')
+  frontButton.addEventListener('click', () => { console.log('front') })
 }
 
 function plotForm (content) {
