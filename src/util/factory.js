@@ -21,6 +21,7 @@ const SheetNotFoundError = require('../exceptions/sheetNotFoundError')
 const ContentValidator = require('./contentValidator')
 const Sheet = require('./sheet')
 const { buttonBuilder } = require('../components/button')
+const radarsData = require('../data/radars')
 const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
 
@@ -287,10 +288,9 @@ function radarChoices (content) {
 
   const choices = content.select('.input-sheet__choices')
 
-  buttonBuilder(choices, 'Front', console.log('front'))
-  buttonBuilder(choices, 'Back', console.log('back'))
-  buttonBuilder(choices, 'Mobile', console.log('mobile'))
-  buttonBuilder(choices, 'Scripting', console.log('script'))
+  radarsData.default.DEVELOPMENT.map((radar) => {
+    buttonBuilder(choices, radar.name, () => console.log(radar.url))
+  })
 }
 
 function plotForm (content) {

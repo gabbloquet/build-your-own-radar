@@ -4,6 +4,6 @@ export const buttonBuilder = (div, content, action) => {
     .attr('id', content.toLowerCase())
     .html(content)
 
-  const frontButton = document.getElementById(content.toLowerCase())
-  frontButton.addEventListener('click', () => action)
+  const button = document.getElementById(content.toLowerCase())
+  button.addEventListener('click', action)
 }
