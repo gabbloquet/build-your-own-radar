@@ -299,27 +299,27 @@ function radarChoices (content) {
 }
 
 function plotForm (content) {
-  content.append('div')
-    .attr('class', 'input-sheet__form')
-    .append('p')
-    .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">Google Sheet or CSV</a> file below…</strong>')
+  // content.append('div')
+  //   .attr('class', 'input-sheet__form')
+  //   .append('p')
+  //   .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">Google Sheet or CSV</a> file below…</strong>')
 
-  const form = content.select('.input-sheet__form').append('form')
-    .attr('method', 'get')
-
-  form.append('input')
-    .attr('type', 'text')
-    .attr('name', 'sheetId')
-    .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV file')
-    .attr('required', '')
-
-  form.append('button')
-    .attr('type', 'submit')
-    .append('a')
-    .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
-    .text('Build my radar')
-
-  form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
+  // const form = content.select('.input-sheet__form').append('form')
+  //   .attr('method', 'get')
+  //
+  // form.append('input')
+  //   .attr('type', 'text')
+  //   .attr('name', 'sheetId')
+  //   .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV file')
+  //   .attr('required', '')
+  //
+  // form.append('button')
+  //   .attr('type', 'submit')
+  //   .append('a')
+  //   .attr('class', 'vtmn-btn vtmn-btn_variant--primary')
+  //   .text('Build my radar')
+  //
+  // form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
 }
 
 function plotErrorMessage (exception) {
